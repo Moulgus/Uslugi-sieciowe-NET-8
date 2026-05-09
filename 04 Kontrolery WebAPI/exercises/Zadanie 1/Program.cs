@@ -4,11 +4,9 @@ using WeatherApi.Services;
 
 var builder = WebApplication.CreateBuilder(args);
 
-// Swagger
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
-// HttpClient dla OpenWeather
 builder.Services.AddHttpClient<OpenWeatherClient>(client =>
 {
     var baseUrl = builder.Configuration["OpenWeather:BaseUrl"] ?? "https://api.openweathermap.org";
@@ -17,11 +15,9 @@ builder.Services.AddHttpClient<OpenWeatherClient>(client =>
 
 var app = builder.Build();
 
-// Swagger UI
 app.UseSwagger();
 app.UseSwaggerUI();
 
-// --- WEATHER (Twoje) ---
 app.MapGet("/weather", async (string city, OpenWeatherClient ow, CancellationToken ct) =>
 {
     try
@@ -42,8 +38,6 @@ app.MapGet("/weather", async (string city, OpenWeatherClient ow, CancellationTok
         return Results.Problem($"HTTP error while calling OpenWeather: {ex.Message}");
     }
 });
-
-// --- CITIES CRUD ---
 
 // GET /cities
 app.MapGet("/cities", () => Results.Ok(CityStore.GetAll()))
