@@ -1,0 +1,38 @@
+@BlogCMS_HostAddress = http://localhost:5175
+
+GET {{BlogCMS_HostAddress}}/api/posts
+Accept: application/json
+
+###
+
+GET {{BlogCMS_HostAddress}}/api/posts/1
+Accept: application/json
+
+###
+
+POST {{BlogCMS_HostAddress}}/api/posts
+Content-Type: application/json
+
+{
+  "title": "Pierwszy wpis",
+  "content": "Krótki wpis testowy dla API BlogCMS.",
+  "imageUrl": "https://example.com/blog.jpg",
+  "published": "2026-06-07T12:00:00"
+}
+
+###
+
+PUT {{BlogCMS_HostAddress}}/api/posts/1
+Content-Type: application/json
+
+{
+  "id": 1,
+  "title": "Zaktualizowany wpis",
+  "content": "Zmieniona treść wpisu testowego.",
+  "imageUrl": "https://example.com/blog-updated.jpg",
+  "published": "2026-06-07T12:00:00"
+}
+
+###
+
+DELETE {{BlogCMS_HostAddress}}/api/posts/1
