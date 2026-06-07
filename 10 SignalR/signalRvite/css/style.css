@@ -728,11 +728,95 @@ form input::placeholder {
   background-image: url(../img/gplus.png);
 }
 
+.signalr-chat {
+  padding: 80px 16px;
+}
+
+.signalr-chat .container {
+  box-sizing: border-box;
+  max-width: 760px;
+  margin: 0 auto;
+  padding: 32px;
+  border: 1px solid #dddddd;
+  font-family: 'Poppins', sans-serif;
+}
+
+.signalr-chat__title {
+  margin-bottom: 24px;
+  font-size: 33px;
+  font-weight: 600;
+}
+
+.signalr-chat .row {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 16px;
+}
+
+.signalr-chat .col-1 {
+  width: 120px;
+  font-weight: 600;
+}
+
+.signalr-chat .col-5,
+.signalr-chat .col-6 {
+  flex: 1;
+}
+
+.signalr-chat input[type="text"] {
+  box-sizing: border-box;
+  width: 100%;
+  border: 1px solid #999999;
+  padding: 12px;
+  font-family: 'Poppins', sans-serif;
+  font-size: 16px;
+}
+
+.signalr-chat input[type="button"] {
+  border: 0;
+  background: #666666;
+  color: #ffffff;
+  cursor: pointer;
+  padding: 12px 20px;
+  font-family: 'Poppins', sans-serif;
+  font-size: 16px;
+  text-transform: uppercase;
+}
+
+.signalr-chat input[type="button"]:disabled {
+  cursor: default;
+  opacity: 0.5;
+}
+
+.signalr-chat #messagesList {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  line-height: 24px;
+}
+
+.signalr-chat #messagesList li {
+  padding: 10px 12px;
+  background: #f3f3f3;
+}
+
 @media screen and (max-width: 800px) {
   .input_box{
     width: 100%;
   }
   .contact-and-social-media{
     gap: 16px;
+  }
+  .signalr-chat .container {
+    padding: 20px;
+  }
+  .signalr-chat .row {
+    align-items: stretch;
+    flex-direction: column;
+    gap: 8px;
+  }
+  .signalr-chat .col-1 {
+    width: 100%;
   }
 }
