@@ -1,0 +1,34 @@
+@TravelQuotesApi_HostAddress = http://localhost:5079
+
+GET {{TravelQuotesApi_HostAddress}}/api/quotes
+Accept: application/json
+
+###
+
+GET {{TravelQuotesApi_HostAddress}}/api/quotes/1
+Accept: application/json
+
+###
+
+POST {{TravelQuotesApi_HostAddress}}/api/quotes
+Content-Type: application/json
+
+{
+  "author": "J.R.R. Tolkien",
+  "message": "Not all those who wander are lost."
+}
+
+###
+
+PUT {{TravelQuotesApi_HostAddress}}/api/quotes/1
+Content-Type: application/json
+
+{
+  "id": 1,
+  "author": "J.R.R. Tolkien",
+  "message": "Not all those who wander are lost."
+}
+
+###
+
+DELETE {{TravelQuotesApi_HostAddress}}/api/quotes/1
